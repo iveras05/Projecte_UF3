@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nidal.lahlou.m03_uf3_pp_lahlou_vera.Controladors.HelloController">
+   <children>
+      <TabPane fx:id="TBProducte" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" visible="false">
+         <tabs>
+            <Tab text="ENTRADA DE PRODUCTE">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="IMGMain" fitHeight="131.0" fitWidth="161.0" layoutX="66.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/main.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="TFCodiBarres" layoutX="35.0" layoutY="195.0" prefHeight="37.0" prefWidth="193.0" style="-fx-background-color: salmon;" />
+                        <Button fx:id="BTNProductScan" layoutX="59.0" layoutY="273.0" mnemonicParsing="false" onAction="#escanejar" prefHeight="31.0" prefWidth="129.0" style="-fx-background-color: #018287; -fx-text-fill: #fff; -fx-font-size: 18; -fx-font-style: italic; -fx-border-radius: 100;" text="Escaneja" textFill="#01808500" />
+                        <TextField fx:id="TFProductName" disable="true" layoutX="365.0" layoutY="58.0" prefHeight="24.0" prefWidth="195.0" style="-fx-background-color: salmon;" />
+                        <TextField fx:id="TFProductPrice" disable="true" layoutX="364.0" layoutY="119.0" prefHeight="23.0" prefWidth="194.0" style="-fx-background-color: salmon;" />
+                        <TextField fx:id="TFProductDescription" disable="true" layoutX="359.0" layoutY="179.0" prefHeight="42.0" prefWidth="200.0" style="-fx-background-color: salmon;" />
+                        <TextField fx:id="TFProductDate" disable="true" layoutX="359.0" layoutY="258.0" prefHeight="24.0" prefWidth="175.0" style="-fx-background-color: salmon;" />
+                        <Button fx:id="TFProductSave" disable="true" layoutX="389.0" layoutY="306.0" mnemonicParsing="false" onAction="#guardarButtonProducte" prefHeight="24.0" prefWidth="128.0" style="-fx-background-color: #018287; -fx-text-fill: #fff; -fx-font-size: 18; -fx-font-style: italic; -fx-border-radius: 100;" text="Guarda" textFill="#01808500" />
+                        <Text fill="#018287" layoutX="450.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOM">
+                           <font>
+                              <Font name="Khmer OS System" size="13.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#018287" layoutX="443.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PREU€" />
+                        <Text fill="#018287" layoutX="423.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DESCRIPCIÓ" wrappingWidth="86.17041015625" />
+                        <Text fill="#018287" layoutX="410.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATA CADUCITAT" />
+                        <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="533.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/data.png" />
+                           </image>
+                        </ImageView>
+                        <Text fx:id="TXTProducteErr" fill="RED" layoutX="217.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NO PODEN HAVER-HI CAMPS BUITS!!" visible="false" wrappingWidth="165.712890625" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="SORTIDA DE PRODUCTE">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="166.0" fitWidth="183.0" layoutX="68.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/main.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="TFProductCodeBarresRemove" layoutX="327.0" layoutY="89.0" prefHeight="37.0" prefWidth="193.0" style="-fx-background-color: salmon;" />
+                        <TextField fx:id="TFProductNameRemove" disable="true" layoutX="325.0" layoutY="205.0" prefHeight="31.0" prefWidth="199.0" style="-fx-background-color: salmon;" />
+                        <Button fx:id="BTNRemoveProduct" disable="true" layoutX="236.0" layoutY="310.0" mnemonicParsing="false" onAction="#eliminarButtonProducte" prefHeight="24.0" prefWidth="128.0" style="-fx-background-color: #018287; -fx-text-fill: #fff; -fx-font-size: 18; -fx-font-style: italic; -fx-border-radius: 100;" text="ELIMINAR" textFill="#01808500" />
+                        <Text fill="#018287" layoutX="360.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOM DEL PRODUCTE">
+                           <font>
+                              <Font name="Khmer OS System" size="13.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#018287" layoutX="375.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CODI DE BARRAS" textAlignment="JUSTIFY">
+                           <font>
+                              <Font name="Khmer OS System" size="13.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="BTNProductSearchRemove" layoutX="371.0" layoutY="130.0" mnemonicParsing="false" onAction="#buscarButtonProducte" prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: #018287; -fx-text-fill: #fff; -fx-font-size: 12; -fx-font-style: italic; -fx-border-radius: 100;" text="BUSCAR" textFill="#01808500">
+                           <font>
+                              <Font size="6.0" />
+                           </font>
+                        </Button>
+                        <Text fx:id="TXTCodiErr" fill="RED" layoutX="325.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AQUEST CODI DE BARRAS NO EXISTEIX!" visible="false" />
+                        <Text fx:id="TXTProducteElim" fill="RED" layoutX="389.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRODUCTE ELIMINAT!" visible="false" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="LLISTA DE PRODUCTE">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="BTNListProduct" layoutX="236.0" layoutY="291.0" mnemonicParsing="false" onAction="#llistarButtonProducte" prefHeight="24.0" prefWidth="128.0" style="-fx-background-color: #018287; -fx-text-fill: #fff; -fx-font-size: 18; -fx-font-style: italic; -fx-border-radius: 100;" text="LLISTAR" textFill="#01808500" />
+                        <TextArea fx:id="TALlistaProductes" layoutX="37.0" layoutY="28.0" prefHeight="222.0" prefWidth="539.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <Pane fx:id="TXTAdmins" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <PasswordField id="password" fx:id="TFContrasenya" layoutX="181.0" layoutY="200.0" opacity="0.66" prefHeight="19.0" prefWidth="238.0" promptText="Contrasenya" style="-fx-border-color: #000;" />
+            <TextField id="username" fx:id="TFUsuari" layoutX="181.0" layoutY="123.0" opacity="0.66" prefHeight="1.0" prefWidth="238.0" promptText="Nom d'usuari" style="-fx-border-color: #000;" />
+            <Text layoutX="195.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inici de sessió">
+               <font>
+                  <Font name="DejaVu Sans" size="30.0" />
+               </font>
+            </Text>
+            <Text layoutX="181.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuari" />
+            <Text layoutX="181.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contrasenya" />
+            <Button id="submit-button" fx:id="BTNSubmit" layoutX="250.0" layoutY="294.0" mnemonicParsing="false" onAction="#loggin" prefHeight="26.0" prefWidth="101.0" style="-fx-border-color: lightblue; -fx-cursor: hand;" text="Acceptar">
+               <font>
+                  <Font name="Loma Bold" size="13.0" />
+               </font>
+            </Button>
+            <Text id="administradorsText" fx:id="TXTSecretAdmin" fill="#3176bc" layoutX="251.0" layoutY="267.0" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-cursor: hand;" text="Administradors" underline="true" visible="false" />
+         </children>
+      </Pane>
+      <TabPane fx:id="TPPersona" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" visible="false">
+         <tabs>
+            <Tab text="ENTRADA DE PERSONA">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="TFUserName" layoutX="364.0" layoutY="182.0" prefHeight="24.0" prefWidth="175.0" style="-fx-background-color: #43b3db;" />
+                        <Text fill="#018287" layoutX="436.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOM">
+                           <font>
+                              <Font name="Khmer OS System" size="13.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#018287" layoutX="422.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COGNOM">
+                           <font>
+                              <Font name="Khmer OS System" size="13.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#018287" layoutX="403.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOM D'USUARI">
+                           <font>
+                              <Font name="Khmer OS System" size="13.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#018287" layoutX="402.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONTRASENYA">
+                           <font>
+                              <Font name="Khmer OS System" size="13.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="TFUserPassword" layoutX="364.0" layoutY="236.0" prefHeight="24.0" prefWidth="175.0" style="-fx-background-color: #43b3db;" />
+                        <TextField fx:id="TFNamePersona" layoutX="364.0" layoutY="80.0" prefHeight="24.0" prefWidth="175.0" style="-fx-background-color: #43b3db;" />
+                        <TextField fx:id="TFSurnamePersona" layoutX="363.0" layoutY="132.0" prefHeight="24.0" prefWidth="175.0" style="-fx-background-color: #43b3db;" />
+                        <ImageView fitHeight="181.0" fitWidth="187.0" layoutX="38.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/afegir-persona.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="BTNAfegirPersona" layoutX="406.0" layoutY="311.0" mnemonicParsing="false" onAction="#afegirButtonUsuari" prefHeight="26.0" prefWidth="90.0" text="AFEGIR" />
+                        <CheckBox fx:id="CHKBXAdmin" layoutX="392.0" layoutY="278.0" mnemonicParsing="false" text="Administrador" />
+                        <Text fx:id="TXTPersonaErr" fill="#850101" layoutX="151.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTS ELS CAMPS SON OBLIGATORIS!" visible="false">
+                           <font>
+                              <Font name="Khmer OS System" size="13.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="SORTIDA DE PERSONA">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea fx:id="TAUserList" layoutX="47.0" layoutY="19.0" prefHeight="260.0" prefWidth="506.0" />
+                        <CheckBox fx:id="CHKBXAdminUserList" layoutX="223.0" layoutY="303.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="154.0" text="Administradors" />
+                        <Button fx:id="BTNLlistarPersona" layoutX="377.0" layoutY="304.0" mnemonicParsing="false" onAction="#llistarButtonUsuari" text="LLISTAR" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</StackPane>
